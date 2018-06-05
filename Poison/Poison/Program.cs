@@ -11,12 +11,26 @@ namespace Poison
     {
         static void Main(string[] args)
         {
-            var apples = PickApples().Take(100000);
+            var apples = PickApples().Take(10000);
 
-            foreach (var apple in apples)
-            {
-                Console.WriteLine(apple.Colour + "  " + apple.Poisoned);
-            }
+            var countPoisoned = apples.Count(n => n.Poisoned == true);
+
+            Console.WriteLine(countPoisoned);
+
+            var nonRedPoisoned = apples.Where(n => n.Poisoned == true && n.Colour != "Red").GroupBy(n => n.Colour)
+                .Select(group =>  new
+                {
+                    Catg = group.Key,
+                    Count = group.Count()
+                }).OrderByDescending(n => n.Count).First();
+            
+            
+                Console.WriteLine(nonRedPoisoned.Catg);
+           
+
+
+
+
 
             Console.ReadLine();
 
