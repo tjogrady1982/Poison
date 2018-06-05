@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27428.2027
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Poison", "Poison\Poison.csproj", "{EC36930E-82FA-4FD6-AC41-6AACE021022F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EC36930E-82FA-4FD6-AC41-6AACE021022F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC36930E-82FA-4FD6-AC41-6AACE021022F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC36930E-82FA-4FD6-AC41-6AACE021022F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC36930E-82FA-4FD6-AC41-6AACE021022F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4FFB89FF-0D92-4D0B-8C07-8FD03615F36D}
+	EndGlobalSection
+EndGlobal
