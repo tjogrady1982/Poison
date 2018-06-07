@@ -18,23 +18,33 @@ namespace Poison
             Console.WriteLine(countPoisoned);
 
             var nonRedPoisoned = apples.Where(n => n.Poisoned == true && n.Colour != "Red").GroupBy(n => n.Colour)
-                .Select(group =>  new
+                .Select(group => new
                 {
                     Catg = group.Key,
                     Count = group.Count()
                 }).OrderByDescending(n => n.Count).First();
-            
-            
-                Console.WriteLine(nonRedPoisoned.Catg);
-           
+
+
+            Console.WriteLine(nonRedPoisoned.Catg);
+
+
+            //var maxConsecutivePoisoned = apples.SkipWhile(n => n.Poisoned == false);
+
+            var grp = 0;
+            var maxConsecutiveNonPoisonedRed = apples.Zip(apples.Skip(1).Concat(new Apple[] { null }),
+                (x, y) => new { x, key = (x == null || y == null || (x.Poisoned == y.Poisoned && x.Colour == y.Colour)) ? grp : grp++ }
+                ).GroupBy(i => i.key, (k, g) => g.Select(e => e.x));
 
 
 
-
+            //foreach (var apple in maxConsecutiveNonPoisonedRed)
+            //{
+            //    Console.WriteLine(apple.ToString());
+            //}
 
             Console.ReadLine();
 
-             IEnumerable<Apple> PickApples()
+            IEnumerable<Apple> PickApples()
             {
                 int colourIndex = 1;
                 int poisonIndex = 7;
@@ -67,7 +77,7 @@ namespace Poison
                 return "Red";
             }
 
-        
+
         }
 
     }
